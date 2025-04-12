@@ -1,14 +1,16 @@
-name: Python CI
+name: Python CI for Lab3
 
 on:
   push:
+    paths:
+      - 'Second Semester/Lab3/**'
   pull_request:
+    paths:
+      - 'Second Semester/Lab3/**'
   workflow_dispatch:
-  schedule:
-    - cron: '0 12 * * 1'
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,9 +25,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest pytest-cov codecov
 
-      - name: Run tests from lab3/
+      - name: Run PyTest in Lab3
         run: |
-          pytest lab3/ --cov=lab3
+          pytest "Second Semester/Lab3" --cov="Second Semester/Lab3"
 
-      - name: Upload coverage to Codecov
+      - name: Upload coverage report
         uses: codecov/codecov-action@v3
