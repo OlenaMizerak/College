@@ -100,13 +100,10 @@ def test_subtract():
 
 - **Файл:** `README.md`
 
-```markdown
 # CI/CD Lab
 
 [![Python CI](https://github.com/OlenaMizerak/College/actions/workflows/python-app.yml/badge.svg)](https://github.com/OlenaMizerak/College/actions/workflows/python-app.yml)
 
-Простий проєкт для демонстрації GitHub Actions та Codecov інтеграції.
-```
 
 ✅ Бейдж з’явився на головній сторінці репо.
 
